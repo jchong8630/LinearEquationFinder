@@ -13,6 +13,11 @@ public class LinearEquation {
         this.xy2 = xy2;
     }
 
+    public void main(){
+        getXYDigit();
+        getXY();
+    }
+
     public void getXYDigit(){
         xy1Int = Integer.parseInt(xy1);
         xy2Int = Integer.parseInt(xy2);
@@ -23,5 +28,6 @@ public class LinearEquation {
         x2 = xy2Int / 10;
         y1 = xy1Int % 10;
         y2 = xy2Int % 10;
+        System.out.println(x1);
     }
 }
