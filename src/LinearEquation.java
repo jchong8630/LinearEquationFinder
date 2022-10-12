@@ -34,7 +34,6 @@ public class LinearEquation {
     //Finds Slope
     public double slope(){
         slope = (double)(y2-y1)/(x2-x1);
-        System.out.println(slope);
         return slope;
     }
 
@@ -47,6 +46,9 @@ public class LinearEquation {
     //Finds Slope Intercept Form
     public String slopeInterceptForm(){
         form = "y = " + slope + "x +" + String.format("%.0f",yIntercept);
+        if (slope == 0) {
+            form = "y = " + String.format("%.0f",yIntercept);
+        }
         return form;
     }
 
