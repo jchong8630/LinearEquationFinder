@@ -24,7 +24,7 @@ This method will separate the x value from the xy1Int and xy2Int. It will define
 public void getY()
 This method will separate the y value from the xy1Int and xy2Int. It will define y1 and y2 as these values.
 
-public int slope()
+public double slope()
 This method will return the slope by doing (y2-y1)/(x2-x1).
 
 public int yIntercept()

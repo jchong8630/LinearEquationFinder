@@ -8,6 +8,9 @@ public class Runner {
         System.out.print("Enter the second (x,y) coordinate point: ");
         String xy2 = s.nextLine();
         LinearEquation equation = new LinearEquation(xy1, xy2);
-        equation.main();
+        System.out.println(equation);
+        System.out.print("Enter an x-value: ");
+        int xCoord = s.nextInt();
+        equation.getX(xCoord);
     }
 }
