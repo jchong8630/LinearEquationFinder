@@ -3,8 +3,6 @@ public class LinearEquation {
     Scanner s = new Scanner(System.in);
     private String xy1;
     private String xy2;
-    private int xy1Int;
-    private int xy2Int;
     private int x1;
     private int x2;
     private int y1;
@@ -26,10 +24,15 @@ public class LinearEquation {
         x2 = Integer.parseInt(xy2.substring(1,xy2.indexOf(",")));
         y1 = Integer.parseInt(xy1.substring(xy1.indexOf(",") + 1, xy1.indexOf(")")));
         y2 = Integer.parseInt(xy2.substring(xy2.indexOf(",") + 1, xy2.indexOf(")")));
+        System.out.println(x1);
+        System.out.println(x2);
+        System.out.println(y1);
+        System.out.println(y2);
     }
 
     public double slope(){
-        slope = (y2-y1)/(x2-x1);
+        slope = (double)(y2-y1)/(x2-x1);
+        System.out.println(slope);
         return slope;
     }
 
@@ -39,7 +42,7 @@ public class LinearEquation {
     }
 
     public String slopeInterceptForm(){
-        form = "y = " + slope + "x +" + yIntercept;
+        form = "y = " + slope + "x +" + String.format("%.0f",yIntercept);
         return form;
     }
 
@@ -66,7 +69,7 @@ public class LinearEquation {
     }
     public String toString() {
         equationRunner();
-        String statement = "Slope of the line: " + slope + "\nY-Intercept: " + yIntercept + "\nSlope Intercept Form: " + form +"\nDistance Between Points: " + distance;
+        String statement = "Slope of the line: " + slope + "\nY-Intercept: " + String.format("%.0f",yIntercept) + "\nSlope Intercept Form: " + form +"\nDistance Between Points: " + String.format("%.2f",distance);
         return statement;
     }
 }
