@@ -15,7 +15,7 @@ public class LinearEquation {
 
     private int xCoord;
     private String form;
-    public double distance;
+    private double distance;
 
     //Constructor that accepts ((x1,y1),(x2,y2)
     public LinearEquation(String xy1, String xy2) {
@@ -45,9 +45,9 @@ public class LinearEquation {
 
     //Finds Slope Intercept Form
     public String slopeInterceptForm(){
-        form = "y = " + slope + "x +" + String.format("%.0f",yIntercept);
+        form = "y = " + String.format("%.2f",slope) + "x +" + String.format("%.2f",yIntercept);
         if (slope == 0) {
-            form = "y = " + String.format("%.0f",yIntercept);
+            form = "y = " + String.format("%.2f",yIntercept);
         }
         return form;
     }
@@ -74,7 +74,7 @@ public class LinearEquation {
     }
 
     //Takes the inputed X-Value and calls the findY method
-    public void getX(int x){
+    public void getCoord(int x){
         xCoord = x;
         System.out.println("Solved coordinate point is: (" + xCoord + "," + findY(xCoord) + ")");
     }
@@ -82,7 +82,7 @@ public class LinearEquation {
     //Displays the information about the linear equation
     public String toString() {
         equationRunner();
-        String statement = "Slope of the line: " + slope + "\nY-Intercept: " + String.format("%.0f",yIntercept) + "\nSlope Intercept Form: " + form +"\nDistance Between Points: " + String.format("%.2f",distance);
+        String statement = "Slope of the line: " + String.format("%.2f",slope) + "\nY-Intercept: " + String.format("%.2f",yIntercept) + "\nSlope Intercept Form: " + form +"\nDistance Between Points: " + String.format("%.2f",distance);
         return statement;
     }
 }

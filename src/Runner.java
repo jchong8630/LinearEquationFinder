@@ -11,6 +11,6 @@ public class Runner {
         System.out.println(equation);
         System.out.print("Enter an x-value: ");
         int xCoord = s.nextInt();
-        equation.getX(xCoord);
+        equation.getCoord(xCoord);
     }
 }

@@ -2,12 +2,14 @@ LinearEquation class
 Instance Variables:
 private string xy1 - xy-cord 1
 private string xy2 - xy-cord 2
-private int xy1Int - xy-cord 1
-private int xy2Int - xy-cord 2
 private int x1 - x-cord 1
 private int x2 - x-cord 2
 private int y1 - y-cord 1
 private int y2 - y-cord 2
+private double slope
+private double yIntercept
+private String form
+private double distance
 private int xCoord - input x coordinate
 
 Constructor:
@@ -15,14 +17,8 @@ public LinearEquation(string xy1, string xy2)
 These values will be from the inputs. Each value will be stored in its corresponding variable.
 
 Methods:
-public void getXYDigit()
-This method will remove all non integers from xy1 and xy2. It will define xy1Int and xy2Int as these values.
-
-public void getX()
-This method will separate the x value from the xy1Int and xy2Int. It will define x1 and x2 as these values.
-
-public void getY()
-This method will separate the y value from the xy1Int and xy2Int. It will define y1 and y2 as these values.
+public void getXY()
+This method will extract the x and y values and define its corresponding variables.
 
 public double slope()
 This method will return the slope by doing (y2-y1)/(x2-x1).
@@ -44,6 +40,14 @@ public void findY()
 This method will print the y-coordinate for its corresponding x coordinate that the user inputs. It will use the
 y=mx+b formula that was found using th slopeInterceptForm method.
 Method will print y.
+
+public void equationRunner()
+This method will run all the methods above in order to store all the data in its corresponding variable in order for
+it to be printed in the toString method.
+
+public void getCoord(int x)
+This method will be used to take the x coordinate that was inputted, call the findY() method, and return the
+coordinates for that specific x value.
 
 public String toString()
 This method will display all relevant information about this
