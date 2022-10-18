@@ -10,7 +10,7 @@ private double slope
 private double yIntercept
 private String form
 private double distance
-private int xCoord - input x coordinate
+private double xCoord - input x coordinate
 
 Constructor:
 public LinearEquation(string xy1, string xy2)
@@ -45,7 +45,7 @@ public void equationRunner()
 This method will run all the methods above in order to store all the data in its corresponding variable in order for
 it to be printed in the toString method.
 
-public void getCoord(int x)
+public void getCoord(double x)
 This method will be used to take the x coordinate that was inputted, call the findY() method, and return the
 coordinates for that specific x value.
 

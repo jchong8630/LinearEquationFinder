@@ -10,7 +10,7 @@ public class Runner {
         LinearEquation equation = new LinearEquation(xy1, xy2);
         System.out.println(equation);
         System.out.print("Enter an x-value: ");
-        int xCoord = s.nextInt();
+        double xCoord = s.nextDouble();
         equation.getCoord(xCoord);
     }
 }

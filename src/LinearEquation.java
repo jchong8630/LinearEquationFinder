@@ -13,7 +13,7 @@ public class LinearEquation {
     private double slope;
     private double yIntercept;
 
-    private int xCoord;
+    private double xCoord;
     private String form;
     private double distance;
 
@@ -59,7 +59,7 @@ public class LinearEquation {
     }
 
     //Finds the Y-Value for the inputed X-Value
-    public double findY(int x){
+    public double findY(double x){
         double y = slope * x + yIntercept;
         return y;
     }
@@ -74,9 +74,9 @@ public class LinearEquation {
     }
 
     //Takes the inputed X-Value and calls the findY method
-    public void getCoord(int x){
+    public void getCoord(double x){
         xCoord = x;
-        System.out.println("Solved coordinate point is: (" + xCoord + "," + findY(xCoord) + ")");
+        System.out.println("Solved coordinate point is: (" + xCoord + "," + String.format("%.2f",findY(xCoord)) + ")");
     }
 
     //Displays the information about the linear equation
