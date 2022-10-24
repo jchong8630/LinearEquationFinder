@@ -13,6 +13,10 @@ public class LinearEquation {
     private double slope;
     private double yIntercept;
 
+    private int rise;
+    private int run;
+    private int gcd;
+
     private double xCoord;
     private String form;
     private double distance;
@@ -34,6 +38,8 @@ public class LinearEquation {
     //Finds Slope
     public double slope(){
         slope = (double)(y2-y1)/(x2-x1);
+        rise = y2-y1;
+        run = x2-x1;
         return slope;
     }
 
@@ -43,9 +49,33 @@ public class LinearEquation {
         return yIntercept;
     }
 
+    public void gcd(int x,int y){
+        int Temp;
+        while(y != 0)
+        {
+            Temp = y;
+            y = x % y;
+            x = Temp;
+        }
+        gcd = x;
+    }
+
+    public String fractionForm(){
+        if (run/gcd < 0){
+            rise *= -1;
+            run *= -1;
+        }
+        String str = rise / gcd + "/" + run / gcd;
+
+        if ((rise/gcd) == (run/gcd)){
+            str = "1";
+        }
+        return str;
+    }
+
     //Finds Slope Intercept Form
     public String slopeInterceptForm(){
-        form = "y = " + String.format("%.2f",slope) + "x +" + String.format("%.2f",yIntercept);
+        form = "y = " + fractionForm() + "x + " + String.format("%.2f",yIntercept);
         if (slope == 0) {
             form = "y = " + String.format("%.2f",yIntercept);
         }
@@ -68,6 +98,7 @@ public class LinearEquation {
     public void equationRunner(){
         getXY();
         slope();
+        gcd(run, rise);
         yIntercept();
         slopeInterceptForm();
         distance();
